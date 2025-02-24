@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mockups/ui/tinder/widgets/tinder_button.dart';
 
 class TinderPage extends StatefulWidget {
   const TinderPage({super.key});
@@ -104,48 +105,6 @@ class _TinderPageState extends State<TinderPage> {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class TinderButton extends StatelessWidget {
-  final void Function() onPressed;
-  final String label;
-  final Color color;
-  final IconData iconData;
-
-  const TinderButton({
-    super.key,
-    required this.onPressed,
-    required this.label,
-    this.color = Colors.white,
-    required this.iconData,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 60,
-      child: OutlinedButton(
-        style: ButtonStyle(
-          side: WidgetStatePropertyAll(BorderSide(color: color, width: 2)),
-        ),
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Icon(iconData, size: 28, color: color),
-            Expanded(
-              child: Text(
-                label.toUpperCase(),
-                style: TextStyle(color: color, fontSize: 18),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
         ),
       ),
     );

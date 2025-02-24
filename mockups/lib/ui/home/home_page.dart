@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mockups/ui/home/widgets/home_page_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -60,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Text(
-                'Seamlessly',
+                'Seamlessly.',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 24,
@@ -68,56 +70,35 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 25),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.indigoAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                  onPressed: _goToTinderPage,
-                  child: Text(
-                    'Sign Up with Email ID',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+              HomePageButton(
+                onPressed: _goToTinderPage,
+                label: 'Sign Up with Email ID',
+                backgroundColor: Colors.indigoAccent,
+                fontColor: Colors.white,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                  onPressed: _goToTinderPage,
-                  icon: SizedBox(
-                    height: 28,
-                    width: 28,
-                    child: Image.asset('assets/images/Google.png'),
-                  ),
-                  label: Text('Sign Up with Google'),
-                ),
+              HomePageButton(
+                onPressed: _goToTinderPage,
+                label: 'Sign Up with Google',
+                imagePath: 'assets/images/Google.png',
               ),
               Padding(
                 padding: const EdgeInsets.all(12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account?',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    TextButton(
-                      onPressed: _goToTinderPage,
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(color: Colors.white),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Already have an account? ',
+                    style: TextStyle(color: Colors.white),
+                    children: [
+                      TextSpan(
+                        text: 'Sign In',
+                        style: TextStyle(
+                          color: Colors.white,
+                          decoration: TextDecoration.underline,
+                        ),
+                        recognizer:
+                            TapGestureRecognizer()..onTap = _goToTinderPage,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
