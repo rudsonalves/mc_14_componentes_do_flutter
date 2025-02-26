@@ -35,15 +35,8 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Text(
-                      'Get your Money',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'Under Control',
+                      'Get your Money Under Control',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -54,21 +47,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Text(
-                'Manage your expenses.',
+                'Manage your expenses. Seamlessly.',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
-                'Seamlessly.',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+
               SizedBox(height: 25),
               HomePageButton(
                 onPressed: _goToTinderPage,
